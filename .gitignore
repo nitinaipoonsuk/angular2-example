@@ -1,0 +1,8 @@
+/WebApi/src/Services/project.lock.json
+/WebApi/src/WebApi/project.lock.json
+/WebApi/src/Services/obj
+/WebApi/src/Services/bin
+/WebApi/src/Services/*.user
+/WebApi/src/WebApi/obj
+/WebApi/src/WebApi/bin
+/WebApi/src/WebApi/*.user

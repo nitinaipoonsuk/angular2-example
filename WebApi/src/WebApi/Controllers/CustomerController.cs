@@ -16,9 +16,9 @@ namespace WebApi.Controllers
 
         // GET api/values
         [HttpGet]
-        public JsonResult Get()
+        public CustomerModel[] Get()
         {
-            return Json(_service.Get());
+            return _service.Get();
         }
 
         // GET api/values/5
