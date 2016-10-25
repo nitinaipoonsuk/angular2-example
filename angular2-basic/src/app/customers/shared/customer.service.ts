@@ -9,18 +9,16 @@ import { CustomerModel, MockedCustomerModel } from '.';
 export class CustomerService {
 
   private webApiUrl = 'http://localhost:55419/api/customer';
-  
+
   constructor(private http: Http) { }
 
-  getCustomers() : Promise<CustomerModel[]> {
-    var customer = this.http.get(this.webApiUrl)
+  getCustomers(): Promise<CustomerModel[]> {
+    let customer = this.http.get(this.webApiUrl)
                .toPromise()
-               .then(response => response.json().data as CustomerModel[])
+               .then(response => response.json() as CustomerModel[])
                .catch(this.handleError);
 
     return customer;
-
-    //return MockedCustomerModel;
   }
 
   private handleError(error: any): Promise<any> {
