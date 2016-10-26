@@ -7,3 +7,4 @@
 /WebApi/src/WebApi/bin
 /WebApi/src/WebApi/*.user
 /WebApi/.vs/restore.dg
+/WebApi/.vs
