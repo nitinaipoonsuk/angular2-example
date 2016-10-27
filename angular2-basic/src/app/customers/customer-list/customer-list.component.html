@@ -8,7 +8,7 @@
       <th>Name</th>
       <th>Address</th>
       <th>Province</th>
-      <th>Edit</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +17,10 @@
       <td>{{customer.Name}}</td>
       <td>{{customer.Address}}</td>
       <td>{{customer.Province}}</td>
-      <td><a href="javascript:void(0)" (click)="onUpdate(customer.Id)">Edit</a></td>
+      <td>
+        <a href="javascript:void(0)" (click)="onUpdate(customer.Id)">Edit</a> | 
+        <a href="javascript:void(0)" (click)="onDelete(customer.Id)">Delete</a>
+      </td>
     </tr>
   </tbody>
 </table>

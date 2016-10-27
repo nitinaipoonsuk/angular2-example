@@ -37,7 +37,7 @@ namespace WebApi.Controllers
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put([FromBody] CustomerModel model)
+        public void Put(int id, [FromBody] CustomerModel model)
         {
             _service.Edit(model);
         }

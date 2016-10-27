@@ -11,14 +11,15 @@ import { CustomerModel, CustomerService } from '../shared';
 export class CustomerListComponent implements OnInit {
 
   private customerList: CustomerModel[];
-  constructor(private customerService: CustomerService, private router: Router) { }
+
+  constructor(private service: CustomerService, private router: Router) { }
 
   ngOnInit() {
     this.getCustomers();
   }
 
   getCustomers(): void {
-    this.customerService.getCustomers()
+    this.service.getCustomers()
       .then(customers => {
         this.customerList = customers;
       });
@@ -28,4 +29,7 @@ export class CustomerListComponent implements OnInit {
     this.router.navigate(['/customer/update', id]);
   }
 
+  onDelete(id: number): void {
+    this.service.delete(id);
+  }
 }

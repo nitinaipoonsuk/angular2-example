@@ -25,7 +25,7 @@ export class CustomerUpdateComponent implements OnInit {
    });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     this.service.update(this.customerModel);
   }
 

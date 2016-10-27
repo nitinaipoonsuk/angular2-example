@@ -45,8 +45,19 @@ export class CustomerService {
   }
 
   update(customerModel: CustomerModel): void {
-    this.http.put(this.webApiUrl, JSON.stringify(customerModel), {headers: this.headers})
-    // .map(res => res.json())
+    this.http.put(this.webApiUrl + '/' + customerModel.Id, JSON.stringify(customerModel), {headers: this.headers})
+    .subscribe(
+          (data) => {
+            this.router.navigate(['customers']);
+          },
+          (response: Response) => {
+            this.handleError(response);
+          }
+        );
+  }
+
+  delete(id: number): void {
+    this.http.delete(this.webApiUrl + '/' + id, {headers: this.headers})
     .subscribe(
           (data) => {
             this.router.navigate(['customers']);
