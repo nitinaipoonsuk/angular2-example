@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { CustomerListComponent, CustomerCreateComponent, CustomerService } from './customers';
+import { CustomerUpdateComponent } from './customers/customer-update/customer-update.component';
 
 /*import {
   AppComponent,
@@ -23,7 +24,8 @@ import { CustomerListComponent, CustomerCreateComponent, CustomerService } from 
     HomeComponent,
     HeaderComponent,
     CustomerListComponent,
-    CustomerCreateComponent
+    CustomerCreateComponent,
+    CustomerUpdateComponent
   ],
   imports: [
     BrowserModule,

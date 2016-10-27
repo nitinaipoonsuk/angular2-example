@@ -8,9 +8,11 @@ namespace Services.MockData
 {
     public static class MockedCustomer
     {
-        public static List<CustomerModel> GetMockData()
+        private static List<CustomerModel> _customerList;
+
+        static MockedCustomer()
         {
-            return new List<CustomerModel>
+            _customerList = new List<CustomerModel>
             {
                 new CustomerModel()
                 {
@@ -34,6 +36,11 @@ namespace Services.MockData
                     Province = 3
                 }
             };
+        }
+
+        public static List<CustomerModel> GetMockData()
+        {
+            return _customerList;
         }
     }
 }

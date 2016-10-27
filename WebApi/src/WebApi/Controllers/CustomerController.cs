@@ -30,16 +30,15 @@ namespace WebApi.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post(CustomerModel model)
+        public void Post([FromBody] CustomerModel model)
         {
             _service.Create(model);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, CustomerModel model)
+        public void Put([FromBody] CustomerModel model)
         {
-            model.Id = id;
             _service.Edit(model);
         }
 

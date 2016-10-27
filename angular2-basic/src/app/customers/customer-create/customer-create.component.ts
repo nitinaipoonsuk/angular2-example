@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CustomerModel, MockedCustomerModel } from '../shared';
+import { CustomerService, CustomerModel } from '../shared';
 
 @Component({
   selector: 'app-customer-create',
@@ -11,28 +11,29 @@ export class CustomerCreateComponent implements OnInit {
   public clickMe: string;
   public values: string;
 
-  public provinces: string[] = ["", "กรุงเทพมหานคร", "นนทบุรี", "กาญนะจ๊ะบุรี"];
+  public provinces: string[] = ['', '1', '2', '3'];
   public customerModel: CustomerModel = new CustomerModel();
 
-  private mockedCustomerModel: CustomerModel[] = MockedCustomerModel;
+  // private mockedCustomerModel: CustomerModel[] = MockedCustomerModel;
 
-  constructor() { }
+  constructor(private service: CustomerService) { }
 
   ngOnInit() {
   }
 
-  public onClickMe(){
+  public onClickMe() {
     this.clickMe = 'clickMe';
   }
 
-  public onKey(event:any) {
+  public onKey(event: any) {
     console.log(event);
     this.values += event.target.value + ' | ';
   }
 
-  public onSubmit(){
-    this.customerModel.Id = this.mockedCustomerModel.length + 1;
-    this.mockedCustomerModel.push(this.customerModel);
+  public onSubmit() {
+    // this.customerModel.Id = this.mockedCustomerModel.length + 1;
+    // this.mockedCustomerModel.push(this.customerModel);
+    this.service.create(this.customerModel);
   }
 
 }

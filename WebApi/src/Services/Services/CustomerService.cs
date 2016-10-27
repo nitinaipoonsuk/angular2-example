@@ -2,6 +2,7 @@
 using Services.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,6 +30,8 @@ namespace Services.Services
             model.Id = customer.Id + 1;
 
             MockedCustomer.GetMockData().Add(model);
+
+            Debug.WriteLine("Customer count : " + MockedCustomer.GetMockData().Count);
         }
 
         public void Edit(CustomerModel model)
