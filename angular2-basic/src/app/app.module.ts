@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { CustomerListComponent, CustomerCreateComponent, CustomerService } from './customers';
 import { CustomerUpdateComponent } from './customers/customer-update/customer-update.component';
+import { CustomerDeleteComponent } from './customers/customer-delete/customer-delete.component';
 
 /*import {
   AppComponent,
@@ -25,7 +26,8 @@ import { CustomerUpdateComponent } from './customers/customer-update/customer-up
     HeaderComponent,
     CustomerListComponent,
     CustomerCreateComponent,
-    CustomerUpdateComponent
+    CustomerUpdateComponent,
+    CustomerDeleteComponent
   ],
   imports: [
     BrowserModule,

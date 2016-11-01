@@ -35,7 +35,10 @@ namespace Services.Services
         {
             var query = MockedCustomer.GetMockData().FirstOrDefault(c => c.Id == model.Id);
 
-            query = model;
+           MockedCustomer.GetMockData().Remove(query);
+
+           MockedCustomer.GetMockData().Add(model);
+
         }
 
         public void Delete(int id)

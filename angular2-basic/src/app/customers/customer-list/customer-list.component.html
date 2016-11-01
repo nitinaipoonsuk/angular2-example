@@ -9,6 +9,8 @@
       <th>Address</th>
       <th>Province</th>
       <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +19,29 @@
       <td>{{customer.Name}}</td>
       <td>{{customer.Address}}</td>
       <td>{{customer.Province}}</td>
-      <td><a href="javascript:void()" (click)="onUpdate(customer.Id)">Edit</a></td>
+      <!--<td><a href="javascript:void()" (click)="onUpdate(customer.Id)">Edit</a></td>-->
+      <td><a routerLink='/customer/update/{{customer.Id}}'>Edit</a></td>
+      <td><a routerLink='/customer/delete/{{customer.Id}}'>Delete</a></td>
+      <td><a href="javascript:void()" (click)="open(content, customer.Id)">Delete</a></td>
     </tr>
   </tbody>
 </table>
+
+<template ngbModalContainer></template>
+
+<template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title">ยืนยัน</h4>
+  </div>
+  <div class="modal-body">
+    <p>คุณต้องการลบข้อมูลหรือไม่</p>
+  </div>
+  <div class="modal-footer">
+    <td>{{customer.Id}}</td>
+    <button type="button" class="btn btn-secondary" (click)="c('Close click');">ตกลง</button>
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">ยกเลิก</button>
+  </div>
+</template>

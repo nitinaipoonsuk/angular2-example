@@ -27,4 +27,10 @@ export class CustomerUpdateComponent implements OnInit {
       });
   }
 
+ public onSubmit() {
+    console.log('Hi HI update eiei');
+    this.service.update(this.customerModel);
+
+  }
+
 }
